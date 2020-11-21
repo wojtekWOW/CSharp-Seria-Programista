@@ -10,18 +10,19 @@ namespace StudentDiary
         //Parametry=pola
     
         List<float> ratings = new List<float>();
+        string imie;
 
         //Metody
         
         /// <summary>
         /// Method adding new rating to diary
         /// </summary>
-        /// <param name="rating"></param>
+        /// <param name="rating">new rating</param>
         public void AddRating(float rating)
         {
             ratings.Add(rating);
         }
-
+        
         /// <summary>
         /// Method calculating average rating
         /// </summary>
@@ -55,11 +56,22 @@ namespace StudentDiary
             return ratings.Min();
         }
 
-        public static void AskForRatingsAndShowStatistic(Diary student)
+        public string AddName()
         {
+            Console.WriteLine("Podaj imie studenta:");
+                imie = Console.ReadLine();
+            return imie;
+        }
+        /// <summary>
+        /// Method displaying instructions, uses other methods to display answers
+        /// </summary>
+        /// <param name="student"></param>
+        public static void AskForRatingsAndShowStatistic(Diary student)
+        {            
+            Console.WriteLine($"Podaj oceny ucznia z zakresu 1-10 uzyskane przez  {student.imie}");
             for (; ; )
             {
-                Console.WriteLine("Podaj odene z zakresu 1-10");
+
                 float rating;
                 bool result = float.TryParse(Console.ReadLine(), out rating);
 
@@ -75,10 +87,11 @@ namespace StudentDiary
                 }
             }
 
-            Console.WriteLine("Średnia ocen to :" + student.CalculateAverage());
-            Console.WriteLine("Najwieksza ocena to :" + student.GiveMaxRating());
-            Console.WriteLine("Najniższa ocena to :" + student.GiveMinRating());
+            Console.WriteLine($"Średnia ocen ucznia {student.imie}  to :" + student.CalculateAverage());
+            Console.WriteLine($"Najwieksza ocena ucznia {student.imie} to :" + student.GiveMaxRating());
+            Console.WriteLine($"Najniższa ocena ucznia {student.imie} to :" + student.GiveMinRating());
             Console.ReadKey();
         }
+
     }
 }
