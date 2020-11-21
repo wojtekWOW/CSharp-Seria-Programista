@@ -6,9 +6,7 @@ using System.Text;
 namespace StudentDiary
 {
     class Program
-    {
-
-        
+    {        
         static void Main(string[] args)
         {   
             Diary student1 = new Diary();

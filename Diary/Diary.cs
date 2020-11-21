@@ -56,6 +56,10 @@ namespace StudentDiary
             return ratings.Min();
         }
 
+        /// <summary>
+        /// Method to add student's name
+        /// </summary>
+        /// <returns>imie</returns>
         public string AddName()
         {
             Console.WriteLine("Podaj imie studenta:");
