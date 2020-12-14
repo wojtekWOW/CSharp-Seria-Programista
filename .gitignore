@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Typy.Test/UnitTest1.cs
+/Typy.Test/Typy.Test.csproj
+/Typy.Test/packages.config
+/Typy.Test/Properties/AssemblyInfo.cs

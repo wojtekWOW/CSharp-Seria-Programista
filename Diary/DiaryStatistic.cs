@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Speech.Synthesis;
+
 namespace StudentDiary
+
 {
     internal class DiaryStatistic
     {
@@ -9,6 +12,8 @@ namespace StudentDiary
 
         public static void ShowStatistic(DiaryStatistic stats)
         {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.Speak("Average grade: " + stats.AverageGrade);
             Console.WriteLine("Średnia ocena: " + stats.AverageGrade);
             Console.WriteLine("Najmniejsza ocena: " + stats.MinGrade);
             Console.WriteLine("Najwieksza ocena: " + stats.MaxGrade);

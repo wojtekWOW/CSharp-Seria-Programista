@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace StudentDiary
 {
     class Program
@@ -20,7 +21,10 @@ namespace StudentDiary
             student2.AddName();
             Diary.AskForRatings(student2);
             stats = student2.ComputeStatistic();
-            DiaryStatistic.ShowStatistic(stats);            
-        }        
+            DiaryStatistic.ShowStatistic(stats);
+
+            
+        }
+        
     }
 }
