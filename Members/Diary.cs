@@ -7,14 +7,26 @@ namespace Members
 {
     class Diary
     {
+        //Konstruktor
         public Diary()
         {
             ratings = new List<float>();
         }
-        //Parametry=pola
-    
+
+        //Parametry=pola    
         List<float> ratings;
-        string imie;
+        private string imie;
+
+        public string Imie
+        {
+            get
+            { return imie.ToUpper(); }
+            set 
+            { 
+                if (!String.IsNullOrEmpty(value))
+                    imie = value;                    
+            }
+        }
 
         //Metody
        
