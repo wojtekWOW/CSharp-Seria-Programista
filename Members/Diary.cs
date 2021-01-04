@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace StudentDiary
+namespace Members
 {
-    public class Diary
+    class Diary
     {
         public Diary()
         {
@@ -14,7 +14,6 @@ namespace StudentDiary
         //Parametry=pola
     
         List<float> ratings;
-        public string nazwaObiektu;
         string imie;
 
         //Metody

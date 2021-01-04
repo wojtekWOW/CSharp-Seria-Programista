@@ -1,7 +1,7 @@
 ﻿using System;
 namespace StudentDiary
 {
-    internal class DiaryStatistic
+    public class DiaryStatistic
     {
         public float AverageGrade;
         public float MinGrade;
