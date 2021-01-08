@@ -15,21 +15,28 @@ namespace Members
 
         //Parametry=pola    
         List<float> ratings;
-        private string imie;
+        private string name;
 
-        public string Imie
+        public string Name
         {
             get
-            { return imie.ToUpper(); }
+            { return name.ToUpper(); }
             set 
-            { 
+            {
                 if (!String.IsNullOrEmpty(value))
-                    imie = value;                    
-            }
+                {
+                    if (name != value)
+                    { 
+                        NameChanged(name, value);
+                    }
+                    name = value;
+                }                  
+            }            
         }
-
+        //Delegat
+        public NameChangeDelegate NameChanged;
         //Metody
-       
+
         // Computes statitistic (average, max and min grade) for given student
         internal DiaryStatistic ComputeStatistic()
         {
@@ -61,8 +68,8 @@ namespace Members
         public string AddName()
         {
             Console.WriteLine("Podaj imie studenta:");
-                imie = Console.ReadLine();
-            return imie;
+                name = Console.ReadLine();
+            return name;
         }
 
         /// <summary>
@@ -71,7 +78,7 @@ namespace Members
         /// <param name="student"></param>
         public static void AskForRatings(Diary student)
         {            
-            Console.WriteLine($"Podaj oceny ucznia z zakresu 1-10 uzyskane przez  {student.imie}");
+            Console.WriteLine($"Podaj oceny ucznia z zakresu 1-10 uzyskane przez  {student.name}");
             for (; ; )
             {        
                 float rating;
