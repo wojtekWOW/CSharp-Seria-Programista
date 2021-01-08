@@ -14,6 +14,10 @@ namespace Members
 
             student1.NameChanged += new NameChangeDelegate(OnNameChanged);
             student1.NameChanged += new NameChangeDelegate(OnNameChanged2);
+            student1.NameChanged += OnNameChanged3;
+            student1.NameChanged += OnNameChanged4;
+            student1.NameChanged -= OnNameChanged4;
+
             //student1.AddName();
             //Diary.AskForRatings(student1);
             //DiaryStatistic stats = student1.ComputeStatistic();
@@ -35,13 +39,23 @@ namespace Members
             Console.ReadKey();
         }
 
-        private static void OnNameChanged(string existingName, string newName)
+        
+
+        private static void OnNameChanged(object sender, NameChangedEventArgs args)
         {
-            Console.WriteLine($"Zmiana nazwy z {existingName} na {newName}");
+            Console.WriteLine($"Zmiana nazwy z {args.ExistingName} na {args.NewName}");
         }
-        private static void OnNameChanged2(string existingName, string newName)
+        private static void OnNameChanged2(object sender, NameChangedEventArgs args)
         {
             Console.WriteLine("**********************");
+        }
+        private static void OnNameChanged3(object sender, NameChangedEventArgs args)
+        {
+            Console.WriteLine("trzeci delegat");
+        }
+        private static void OnNameChanged4(object sender, NameChangedEventArgs args)
+        {
+            Console.WriteLine("czwarty delegat");
         }
     }
 }

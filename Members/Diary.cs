@@ -26,15 +26,19 @@ namespace Members
                 if (!String.IsNullOrEmpty(value))
                 {
                     if (name != value)
-                    { 
-                        NameChanged(name, value);
+                    {
+                        NameChangedEventArgs args = new NameChangedEventArgs();
+                        args.ExistingName = name;
+                        args.NewName = value;
+
+                        NameChanged(this, args);
                     }
                     name = value;
                 }                  
             }            
         }
         //Delegat
-        public NameChangeDelegate NameChanged;
+        public event NameChangeDelegate NameChanged;
         //Metody
 
         // Computes statitistic (average, max and min grade) for given student

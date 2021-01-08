@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Members
 {
-    public delegate void NameChangeDelegate(string existingName, string newName);
+    public delegate void NameChangeDelegate(object sender, NameChangedEventArgs args );
    
 }
