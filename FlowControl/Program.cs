@@ -12,7 +12,31 @@ namespace FlowControl
         private static string name;
 
         static void Main(string[] args)
-        {            
+        {
+            //InstructionsIf();
+
+
+            Console.WriteLine("Podaj imie");
+           name =  Console.ReadLine();
+            switch (name)
+            {
+                case "Marcin":
+                    Method1();
+                    break;
+                case "Tomek":
+                    Method2();
+                    Method3();
+                    break;
+
+                default:
+                    Method4();
+                    break;
+            }
+            Console.ReadKey();
+        }
+
+        private static void InstructionsIf()
+        {
             Console.WriteLine("Podaj swój wiek");
             age = int.Parse(Console.ReadLine());
 
@@ -23,7 +47,7 @@ namespace FlowControl
             Console.WriteLine("Podaj swoje imie");
             Console.ReadLine();
 
-            if (age<=10)
+            if (age <= 10)
             {
                 if (name == "Marcin")
                 {
@@ -31,7 +55,7 @@ namespace FlowControl
                 }
                 Method1();
             }
-            else if (age<20)
+            else if (age < 20)
             {
                 Method2();
             }
@@ -43,27 +67,26 @@ namespace FlowControl
             {
                 Method4();
             }
-            Console.ReadKey();
         }
 
         private static void Method4()
         {
-            Console.WriteLine($"Twój wiek jest wiekszy 30 lat i wynosi {age} lat");
+            Console.WriteLine($"Jestes w metodzie 4");
         }
 
         private static void Method3()
         {
-            Console.WriteLine($"Twój wiek jest wiekszy 20 lat i mniejszy lub równy 30 lat i wynosi {age} lat");
+            Console.WriteLine($"Jestes w metodzie 3");
         }
 
         private static void Method2()
         {
-            Console.WriteLine($"Twój wiek jest wiekszy 10 lat i mniejszy niż 20 lat i wynosi {age} lat");
+            Console.WriteLine($"Jestes w metodzie 2");
         }
 
         private static void Method1()
         {
-            Console.WriteLine("Masz 10 lub mniej lat"); ;
+            Console.WriteLine("Jestes w metodzie 1"); ;
         }
     }
 }
